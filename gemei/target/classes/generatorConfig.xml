@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+	<!--导入属性配置driverClass="${db.driverClassName}"
+                connectionURL="${db.url}"
+                userId="${db.username}"
+                password="${db.password}">
+   <properties resource="datasource.properties"></properties>-->
+   
+  <classPathEntry location="D:\MySQL\mysql-connector-java-5.1.6.jar"/>
+  <context id="context1" >
+  	<!-- optional，旨在创建class时，对注释进行控制 -->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+    	<jdbcConnection 
+    		driverClass="com.mysql.jdbc.Driver" 
+    		connectionURL="jdbc:mysql://localhost:3306/gemei?useUnicode=true&amp;characterEncoding=utf-8" 
+    		userId="root" 
+    		password="123456" />
+    <javaModelGenerator 
+    	targetPackage="com.gemei.pojo" 
+    	targetProject="gemei\src\main\java" />
+    <sqlMapGenerator 
+    	targetPackage="mappers" 
+    	targetProject="gemei\src\main\resources" />
+    <javaClientGenerator 
+    	targetPackage="com.gemei.dao" 
+    	targetProject="gemei\src\main\java" 
+    	type="XMLMAPPER" />
+     <table tableName="gemei_shipping" domainObjectName="Shipping" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="gemei_cart" domainObjectName="Cart" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="gemei_cart_item" domainObjectName="CartItem" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="gemei_category" domainObjectName="Category" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="gemei_order" domainObjectName="Order" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="gemei_order_item" domainObjectName="OrderItem" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="gemei_pay_info" domainObjectName="PayInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="gemei_product" domainObjectName="Product" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="detail" jdbcType="VARCHAR" />
+            <columnOverride column="sub_images" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="gemei_user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+  </context>
+</generatorConfiguration>
